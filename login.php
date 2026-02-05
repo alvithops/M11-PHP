@@ -16,6 +16,12 @@ if ($request_method === 'POST') {
     $password = trim($password);
     require_once 'user.php';
     if (otentik($username, $password)) {
+        //set variabel sesi
+        $_SESSION['username'] = $username;
+        $datauser = array(); // deklarasi var array
+        //mencari user (nama)
+        $datauser = cariUserDariUserName($username);
+        $_SESSION['namauser'] = $dataUser['nama'];
         header("Location: sukses.php");
     } else {
         header("Location: {$_SERVER['PHP_SELF']}?error");
