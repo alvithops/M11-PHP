@@ -9,7 +9,7 @@
     if (otentik($username, $password))
         echo "Berhasil Login";
     else
-        echo "Maaf Anda Gagal Login";
+        echo "Gagal Login";
     ?>
 </body>
 
