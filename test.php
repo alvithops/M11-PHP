@@ -5,7 +5,7 @@
     <?php
     require_once('user.php');
     $username = "susi";
-    $password = "abc";
+    $password = "susi";
     if (otentik($username, $password))
         echo "Berhasil";
     else
