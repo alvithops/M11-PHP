@@ -4,8 +4,8 @@
 <body>
     <?php
     require_once('user.php');
-    $username = "susi";
-    $password = "susi";
+    $username = "payung";
+    $password = "payung";
     if (otentik($username, $password))
         echo "Berhasil";
     else
