@@ -7,7 +7,7 @@
     $username = "susi";
     $password = "susi";
     if (otentik($username, $password))
-        echo "Berhasil";
+        echo "Selamat Berhasil";
     else
         echo "Gagal";
     ?>
