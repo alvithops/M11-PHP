@@ -1,10 +1,7 @@
 <?php
-// memulai sesi
 session_start();
-
-// proteksi: jika sesi tidak ditemukan, hentikan akses
 if (!isset($_SESSION['namauser'])) {
-    echo "akses ditolak. silakan login dahulu.";
+    header("Location: login.php");
     exit();
 }
 ?>
@@ -13,18 +10,21 @@ if (!isset($_SESSION['namauser'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>halaman sukses</title>
+    <title>Halaman Sukses</title>
 </head>
 
 <body>
-    <?php
-    // menampilkan nama user dari sesi
-    echo 'user: ' . htmlspecialchars($_SESSION['namauser']);
-    ?>
-    <h1>selamat datang</h1>
-    <p>anda berhasil masuk ke sistem.</p>
+    <header>
+        <small>Login sebagai: <strong><?php echo htmlspecialchars($_SESSION['namauser']); ?></strong></small>
+    </header>
+
+    <h1>Selamat Datang</h1>
+    <p>Anda berhasil masuk ke sistem.</p>
+
     <hr>
-    <a href="logout.php">keluar</a>
+    <nav>
+        <a href="logout.php" onclick="return confirm('Yakin ingin keluar?')">Logout</a>
+    </nav>
 </body>
 
 </html>
